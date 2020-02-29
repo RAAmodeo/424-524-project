@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1583005682489.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2185103953",
+    "id" : "99D6450D",
+    "lastKnownWriteTime" : 1583005695,
+    "last_content_update" : 1583005755702,
+    "path" : "C:/My_R/524.proj/424 / 524 project/2nd try project.Rmd",
+    "project_path" : "2nd try project.Rmd",
+    "properties" : {
+        "cursorPosition" : "26,27",
+        "last_setup_crc32" : "936E827Abb338d19",
+        "scrollLine" : "18",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
