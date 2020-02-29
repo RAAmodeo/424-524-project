@@ -1,7 +1,7 @@
  524 project
  
-Class project
-Project description
+#Class project
+#Project description
 Group Create a two-person group. (You can work alone if you want, but the expectations will be the same as for a two-person group.)
 Topic Select a prediction problem and register it with me.
 You should have a motivation for why this prediction problem is potentially interesting/important.
@@ -9,13 +9,13 @@ You should also know whether/where you're able to get the data.
 Important In addition to an outcome variable, you are going to need a decent set of predictors.
 Also important The datasets that we've used in class are off limits—as are anything in ISLR.
 Still important Groups cannot overlap in topics. First mover wins.
-Data Gather data.
+#Data Gather data.
 Test Randomly select approximately 20% of your data for a test set. (Don't train on it until everything is done.)
 Train Apply "best" techniques to clean, train, and predict. Use four different algorithms—one of which should be a regression-based model (unless it is not possible in your context).
 CV error Estimate your error using cross validation.
 Test Test your performance with the held out data.
-Reports Create the following reports (see materials due, below).
-Materials due
+#Reports Create the following reports (see materials due, below).
+#Materials due
 By 10am on March 12th, submit on Canvas:
 
 Kaggle notebook with (commented) analysis code and figures
