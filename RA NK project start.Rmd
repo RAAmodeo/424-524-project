@@ -1,0 +1,34 @@
+---
+title: "RA NK project start"
+author: "Rebecca Amodeo & Nina Kerkebane"
+date: "2/29/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Project Overview
+ Start here:
+Team Nina
+  - has university data (price per year over 200 years; enrollment by in- vs out-of-state and associated prices, ethnicity ratios; gender ratios retention rates)
+  - her project: impact of tuition increases on enrollment levels of low-income students
+  - predict? price of tuition based on prev year's prices
+  - predict? enrollment rates based on price issues (by group?)
+  - predict? retention rates based on price issues (by group?)
+  - predict? minority enrollment based on other school culture factors such as majority white (or difference in school composition by race and local community racial composition) etc .
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
