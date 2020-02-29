@@ -7,6 +7,9 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+
+
 ```
 
 ## Project Overview
@@ -18,6 +21,11 @@ Team Nina
   - predict? enrollment rates based on price issues (by group?)
   - predict? retention rates based on price issues (by group?)
   - predict? minority enrollment based on other school culture factors such as majority white (or difference in school composition by race and local community racial composition) etc .
+
+Ed Says:
+  - used (time, instution, etc?) fixed effects and time series data 
+  - predict retention OR predict who will leave (numbers of them, who will be the leavers?)
+
 
 ```{r cars}
 summary(cars)
