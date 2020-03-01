@@ -28,5 +28,10 @@ tui_clean1 <- preProcess(
 summary(tui_clean1)
 sum(is.na(tui_clean1))
 
-# 
+# split data into test and training data  20% 80%
+
+set.seed(0726)
+tui_clean_test <- sample_frac(tui_clean1, size = 0.2)
+tui_clean_train <- setdiff(tui_clean, tui_clean_test)
+
 
