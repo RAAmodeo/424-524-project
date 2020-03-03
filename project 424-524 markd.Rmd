@@ -4,6 +4,7 @@ author: "Nina Kerkebane"
 date: "March 1, 2020"
 output: html_document
 ---
+
 #Loading packages 
 ```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
@@ -129,23 +130,16 @@ plot(model_knn)
 
 ```
 
-plotting models
-
-```{r}
-plot(model_ridge)
-plot(model_lasso)
-plot(model_glmnet)
-```
 
 #Testing the models within the test dataset and comparing performance
 
 ```{r Testing the models}
 #Test Test  performance with the held out data.
 #need to find a way to estimate the accuracy of the prediction 
-retention_predict_glmnet <- predict(model_glmnet, newdata = testing(tui_clean_split))
-retention_predict_glmnet
-
-
+split_test$predict_glmnet <- predict(model_glmnet, newdata = split_test)
+split_test$predict_lasso <- predict(model_lasso, newdata = split_test)
+split_test$predict_ridge <- predict(model_ridge, newdata = split_test)
+split_test$predict_knn <- predict(model_knn, newdata = split_test)
 
 
 
