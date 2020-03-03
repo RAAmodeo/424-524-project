@@ -115,8 +115,7 @@ test_net = predict(
 
 
 # Ridge - START HERE ----
-## Ridge - Define range of Lambda for Ridge regression
-## (glmnet wants decreasing range)
+## Define range of Lambda for Ridge regression (decreasing range for glmnet)
 lambdas_ridge = 10^seq(from = 5, to = -2, length = 100)
 
 
@@ -164,8 +163,8 @@ test_ridge = predict(
 )
 
 # Lasso - START HERE-----------
-## Define our range of lambdas for lasso regression
-## (glmnet wants decreasing range)
+## Define range of Lambda for Lasso regression (decreasing range for glmnet)
+
 lambdas_lasso = 10^seq(from = 5, to = -2, length = 100)
 
 
@@ -223,12 +222,25 @@ truth_tr = train_mat[,21]
 
 tr_eval = cbind.data.frame(id, truth_tr, pred_net_tr, pred_ridge, pred_lasso)
 
-tr_eval$e_net_tr = tr_eval$truth_tr - tr_eval[,3]
+tr_eval$e_tr_net = tr_eval$truth_tr - tr_eval[,3]
 
-tr_eval$e_ridge_tr = tr_eval$truth_tr - tr_eval[,4]
+tr_eval$e_tr_ridge = tr_eval$truth_tr - tr_eval[,4]
 
-tr_eval$e_lasso_tr = tr_eval$truth_tr - tr_eval[,5]
+tr_eval$e_tr_lasso = tr_eval$truth_tr - tr_eval[,5]
 
+
+L1_tr.mae_net = mean(abs(tr_eval$truth_tr - tr_eval[,3]))
+
+L1_tr.mae_ridge = mean(abs(tr_eval$truth_tr - tr_eval[,4])) 
+
+L1_tr.mae_lasso = mean(abs(tr_eval$truth_tr - tr_eval[,5]))
+
+
+L2_tr.mse_net = mean((abs(tr_eval$truth_tr - tr_eval[,3]))^2)
+
+L2_tr.mse_ridge = mean((abs(tr_eval$truth_tr - tr_eval[,4]))^2) 
+
+L2_tr.mse_lasso = mean((abs(tr_eval$truth_tr - tr_eval[,5]))^2)
 
 
 # test error evaluation data compilation
@@ -237,11 +249,31 @@ truth_te = test_mat[,21]
 
 te_eval = cbind.data.frame(id2, truth_te, test_net, test_ridge, test_lasso)
 
-te_eval$e_te_net = te_eval$truth_te - te_eval[,3]
 
-te_eval$e_te_ridge = te_eval$truth_te - te_eval[,4]
+L1_te.mae_net = mean(abs(te_eval$truth_te - te_eval[,3]))
 
-te_eval$e_te_lasso = te_eval$truth_te - te_eval[,5]
+L1_te.mae_ridge = mean(abs(te_eval$truth_te - te_eval[,4])) 
+
+L1_te.mae_lasso = mean(abs(te_eval$truth_te - te_eval[,5]))
+
+
+L2_te.mse_net = mean((abs(te_eval$truth_te - te_eval[,3]))^2)
+
+L2_te.mse_ridge = mean((abs(te_eval$truth_te - te_eval[,4]))^2) 
+
+L2_te.mse_lasso = mean((abs(te_eval$truth_te - te_eval[,5]))^2)
+
 
 ## Model Assessment - Error Table -----
 
+our.model = c("Elasticnet", "Ridge", "Lasso")
+
+L1.tr = c(L1_tr.mae_net, L1_tr.mae_ridge, L1_tr.mae_lasso)
+
+L1.te = c(L1_te.mae_net, L1_te.mae_ridge, L1_te.mae_lasso)
+
+L2.tr = c(L2_tr.mse_net, L2_tr.mse_ridge, L2_tr.mse_lasso)
+
+L2.te = c(L2_te.mse_net, L2_te.mse_ridge, L2_te.mse_lasso)
+
+assess = cbind.data.frame(our.model, L1.tr, L2.tr, L1.te, L2.te)
