@@ -63,3 +63,17 @@ Do not include all of the information from the four paragraphs. Your presentatio
 
 Evaluation
 Submit a short evaluation of whether you and your group-member equally distributed work—or if the work was unequal. If it was unequal, describe to what extent it was unequal and whether you believe you should receive the same grade
+
+
+Our notes:
+ Start here:
+  - Nina has university data (price per year over 200 years; enrollment by in- vs out-of-state and associated prices, ethnicity ratios; gender ratios retention rates)
+  - her project: impact of tuition increases on enrollment levels of low-income students
+  - predict? price of tuition based on prev year's prices
+  - predict? enrollment rates based on price issues (by group?)
+  - predict? retention rates based on price issues (by group?)
+  - predict? minority enrollment based on other school culture factors such as majority white (or difference in school composition by race and local community racial composition) etc .
+
+Ed Says:
+  - used (time, instution, etc?) fixed effects and time series data 
+  - predict retention OR predict who will leave (numbers of them, who will be the leavers?)
